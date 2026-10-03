@@ -1,0 +1,6 @@
+{
+  "name": "Students Calender",
+  "description": "Student OS: Minimalist, local-first calendar, academic timetable, exams, task manager, dynamic budget engine, and AI JSON schedule importer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
