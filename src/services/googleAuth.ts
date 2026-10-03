@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps, getApp } from 'firebase/app';
 import { 
   getAuth, 
   signInWithPopup, 
@@ -6,13 +6,14 @@ import {
   onAuthStateChanged, 
   User 
 } from 'firebase/auth';
-import firebaseConfig from '../../firebase-applet-config.json';
+import { getFirebaseConfig } from '../config/firebase';
 
 export const SCOPES = [
   'https://www.googleapis.com/auth/gmail.readonly',
 ];
 
-const app = initializeApp(firebaseConfig);
+const firebaseConfig = getFirebaseConfig();
+const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
